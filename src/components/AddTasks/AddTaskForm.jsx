@@ -51,11 +51,11 @@ const AddTaskForm = ({ closeModal }) => {
           ❌
         </button>
       </div>
-      <form className="flex flex-col gap-3 mt-3 ">
-        <div>
+      <form className="flex flex-col gap-3 mt-3">
+        <div className="w-full">
         <input
           type="text"
-          className="border bg-rose-100 p-1"
+          className="border w-full  bg-rose-100 p-1"
           placeholder="Title"
           name="title"
           onChange={handleChange}
@@ -64,11 +64,11 @@ const AddTaskForm = ({ closeModal }) => {
             <span className="text-red-500">{taskError.title}</span>
           )}
         </div>
-        <div>
+        <div className="w-full">
         <textarea
           name="description"
           rows="3"
-          className="border bg-rose-100 p-1"
+          className="border w-full bg-rose-100 p-1"
           placeholder="This is description"
           onChange={handleChange}
         ></textarea>
@@ -78,11 +78,11 @@ const AddTaskForm = ({ closeModal }) => {
         
         </div>
 
-        <div>
+        <div className="w-2/3 md:w-[27%]">
         <input
           type="date"
           name="dueDate"
-          className="border w-2/3 md:w-[27%] bg-rose-100 text-black p-1"
+          className="border  bg-rose-100 text-black p-1"
           onChange={handleChange}
         />
         {
