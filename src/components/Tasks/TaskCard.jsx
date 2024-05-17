@@ -29,7 +29,7 @@ const TaskCard = ({ item }) => {
   };
 
   const handleCompleted = (taskData) => {
-    let task = { ...taskData, isCompleted: true };
+    let task = { ...taskData, isCompleted: !taskData.isCompleted };
     setTaskData(task);
     dispatch(updateTaskById(task));
   };

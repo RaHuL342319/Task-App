@@ -1,74 +1,8 @@
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-
-// const Login = () => {
-//   const [loginForm, setLoginForm] = useState();
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setLoginForm({ ...loginForm, [name]: value });
-//   };
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     alert(JSON.stringify(loginForm));
-//   };
-//   return (
-//     <div className="container h-[89%] w-full border border-sky-500 flex justify-center items-center bg-gray-800 ">
-//       <form
-//         action=""
-//         className=" w-3/4 md:w-[40%]  px-4 py-7 flex flex-col gap-4 md:gap-3 border rounded bg-zinc-200 text-black shadow-zinc-500 shadow-xl"
-//         onSubmit={handleSubmit}
-//       >
-//         <h1 className="text-3xl text-rose-600">Login</h1>
-//         <div>
-//           <label htmlFor="email" className="text-sm">
-//             Email
-//           </label>
-//           <input
-//             type="email"
-//             name="email"
-//             id="email"
-//             placeholder="email address"
-//             className="border border-sky-300 p-1 w-full rounded"
-//             onChange={handleChange}
-//           />
-//         </div>
-
-//         <div>
-//           <label htmlFor="email" className="text-sm">
-//             Password
-//           </label>
-//           <input
-//             type="password"
-//             name="password"
-//             id="password"
-//             placeholder="password"
-//             className="border border-sky-300 p-1 w-full rounded"
-//             onChange={handleChange}
-//           />
-//         </div>
-//         <div className="flex justify-between">
-//           <button
-//             type="submit"
-//             className="bg-sky-400 text-white px-2 py-1 md:px-4 md:py-1 shadow-md shadow-rose-300 rounded"
-//           >
-//             Login
-//           </button>
-
-//           <p className=" text-green-600 md:px-2 md:py-1 shadow-amber-50 shadow-lg">
-//             <Link to="/signup">New User | Register</Link>
-//           </p>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import validateField from "../../utils/Validate";
 import { useSelector } from "react-redux";
+
 let initialData = {
   email: "",
   password: "",

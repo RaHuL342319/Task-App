@@ -128,6 +128,7 @@ const taskSlice = createSlice({
       localStorage.setItem("Tasks", JSON.stringify(state.data)); // Update localStorage
     },
     removeAllTask: (state) => {
+      state.data.splice(0,state.data.length);
       state.data.length = 0; // Clear the data array efficiently
       localStorage.removeItem("Tasks"); // Remove data from localStorage
     },

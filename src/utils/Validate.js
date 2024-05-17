@@ -41,14 +41,30 @@ const validateField = (name, value, formData) => {
         return "Gender is required";
       }
       return "";
-    // case "hobbies":
-    //   if (!value.length) {
-    //     return "Hobbies are required";
-    //   }
-    //   return "";
     case "country":
       if (!value) {
         return "Country is required";
+      }
+      return "";
+    case 'title':
+      if (!value) {
+        return "Title is required";
+      } else if(value.length >= 25){
+        return "Title should be atmost 25 characters long";
+      }
+      return "";
+
+    case 'description':
+      if(!value){
+        return "Description is required";
+      } else if(value.length >= 100){
+        return "Description should be atmost 100 characters long";
+      }
+      return "";
+    
+    case 'dueDate':
+      if(!value){
+        return "Due Date is required";
       }
       return "";
     default:
