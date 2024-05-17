@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addTask } from "../features/tasks/taskSlice";
+import { useDispatch } from "react-redux";
+import { addTask } from "../../features/tasks/taskSlice";
 
 const AddTaskForm = ({ closeModal }) => {
   const [task, setTask] = useState({
@@ -31,7 +31,7 @@ const AddTaskForm = ({ closeModal }) => {
           ❌
         </button>
       </div>
-      <form action="" className="flex flex-col gap-3 mt-3 ">
+      <form className="flex flex-col gap-3 mt-3 ">
         <input
           type="text"
           className="border bg-rose-100 p-1"
@@ -50,19 +50,19 @@ const AddTaskForm = ({ closeModal }) => {
         <input
           type="date"
           name="dueDate"
-          className="border md:w-1/4 bg-rose-100 text-black p-1"
+          className="border w-2/3 md:w-[27%] bg-rose-100 text-black p-1"
           onChange={handleChange}
         />
         <div className="flex justify-between">
           <button
-            className="bg-green-400 text-white px-2 py-1 md:w-1/6"
+            className="bg-green-400 text-white px-2 py-1 md:w-1/6 rounded"
             onClick={handleSubmit}
           >
             Save
           </button>
 
           <button
-            className="bg-red-500 px-2 py-1 text-white md:w-1/6"
+            className="bg-red-500 px-2 py-1 text-white md:w-1/6 rounded"
             onClick={closeModal}
           >
             Close

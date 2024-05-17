@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import deleteIcon from "../assets/delete.svg";
-import editIcon from "../assets/edit.svg";
-import { deleteTaskById, updateTaskById } from "../features/tasks/taskSlice";
+import deleteIcon from "../../assets/delete.svg";
+import editIcon from "../../assets/edit.svg";
+import { deleteTaskById, updateTaskById } from "../../features/tasks/taskSlice";
 import { useDispatch } from "react-redux";
 
 const TaskCard = ({ item }) => {
@@ -11,12 +11,9 @@ const TaskCard = ({ item }) => {
 
   const handleChange = (e) => {
     let { name, value } = e.target;
-    // console.log(e.target["name"]);
-    // setTaskData({ ...taskData, [name]: value });
     let task = { ...taskData, [name]: value };
     setTaskData(task);
     dispatch(updateTaskById(task));
-   
   };
 
   const handleButton = (taskData) => {
@@ -25,7 +22,6 @@ const TaskCard = ({ item }) => {
   };
 
   const isPastDue = new Date(taskData.dueDate) < new Date();
-  // const formattedDueDate = format(new Date(task.dueDate), "yyyy-MM-dd"); // Assuming date-fns
 
   const handleDelete = (id) => {
     // console.log(id);
@@ -38,7 +34,7 @@ const TaskCard = ({ item }) => {
     dispatch(updateTaskById(task));
   };
   return (
-    <div className="container mx-auto  w-full  md:w-[60%] flex flex-col p-1 md:p-2 border shadow-2xl">
+    <div className="container mx-auto  w-full  md:w-[60%] flex flex-col p-1 md:p-2 border shadow-2xl mt-2 md:mt-0 rounded-b-lg">
       {edit ? (
         <div className="container">
           <div className="w-full">
@@ -89,18 +85,18 @@ const TaskCard = ({ item }) => {
         <div className="container flex bg-gray-200 p-1">
           <div className="w-[80%]">
             <div className="mt-1">
-              <p className="text-xl font-semibold text-start w-full md:w-[40%] overflow-hidden hover:overflow-auto">
+              <p className="text-md md:text-xl font-semibold text-start w-full md:w-[40%] overflow-hidden hover:overflow-auto">
                 {taskData.title}
               </p>
             </div>
             <div className="mt-1">
-              <p className=" text-lg font-normal  text-gray-500 line text-start w-full overflow-hidden text-ellipsis hover:overflow-auto">
+              <p className=" text-xs md:text-lg font-normal  text-gray-500 line text-start w-full overflow-hidden text-ellipsis hover:overflow-auto">
                 {taskData.description}
               </p>
             </div>
             <div className="mt-1">
               <p
-                className={`text-start md:w-[20%] text-md ${
+                className={`text-xs md:text-md text-start md:w-[20%]  ${
                   isPastDue ? "text-red-700" : "text-green-500"
                 }`}
               >
@@ -112,10 +108,15 @@ const TaskCard = ({ item }) => {
             <div className=" container h-full text-end flex flex-col border justify-between">
               <div
                 className="flex border justify-end gap-3"
-                onClick={() => handleCompleted(taskData)}
+                
               >
-                <button className="">✅</button>
+                {/* <div onClick={() => handleCompleted(taskData)}>
+                <button>✅</button>
 
+                </div> */}
+                <input type="checkbox"
+                   checked={taskData.isCompleted} 
+                   onChange={() => handleCompleted(taskData)} />
                 <img
                   src={editIcon}
                   alt=""

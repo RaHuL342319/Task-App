@@ -12,7 +12,7 @@ const Nav = () => {
           <Link to="/login">login</Link>
         </p>
       </div>
-      <div className="flex gap-0 justify-evenly  md:gap-4 mt-2 md:m-2 md:p-0 border">
+      <div className="flex gap-0 justify-evenly  md:gap-4  md:m-2 md:p-0">
         <p className="p-1  hover:bg-blue-200  md:hover:text-xl md:border-none  font-medium ">
           <Link to="/">All Tasks</Link>
         </p>
